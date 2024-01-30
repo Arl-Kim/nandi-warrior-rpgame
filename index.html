@@ -2,25 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>The Ultimate Nandi Warrior</title>
+    <title>The Nandi Warrior</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="game">
         <div id="stats">
-            <span class="stat">Your XP: 0</span>
-            <span class="stat">Your Health: 100</span>
-            <span class="stat">Your Gold: 50</span>
+            <span class="stat">Your XP: <strong><span id="xpText">0</span></strong></span>
+            <span class="stat">Your Health: <strong><span id="healthText">100</span></strong></span>
+            <span class="stat">Your Gold: <strong><span id="goldText">50</span></strong></span>
         </div>
         <div id="controls">
-  
+          <button type="button" id="button1">Visit Supplies Shop</button>
+          <button type="button" id="button2">Go To Forest</button>
+          <button type="button" id="button3">Fight Enemy</button>
         </div>
-        <div id="monsterStats">
-  
+        <div id="enemyStats">
+          <span class="stat">Enemy Identity: <strong><span id="enemyName"></span></strong></span>
+          <span class="stat">Enemy Health: <strong><span id="enemyHealth"></span></strong></span>
         </div>
         <div id="text">
-
+          Welcome To Nandi Warrior! <br>
+          You have been chosen to be the Ultimate Nandi Warrior! Do you have what it takes ? Our foreseers are channeling disturbing visions offlate... They say a great evil is coming, some are even speaking of not one evil but several evils. Your ancestors once defended The Nandi centuries ago and we believe you have the same fight in you. The survival of all Nandindets depends on you Ultimate Warrior! Where do you want to begin your duty ? (Use The Onscreen Controls To Navigate)
         </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

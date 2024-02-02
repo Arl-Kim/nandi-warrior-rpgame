@@ -39,33 +39,24 @@ forestButton.onclick = goToForest;
 fightButton.onclick = fightEnemy;
 
 function update(location){
+    shopButton.innerText = location["button text"][0];
+    forestButton.innerText = location["button text"][1];
+    fightButton.innerText = location["button text"][2];
 
+    
+    shopButton.onclick = location["button functions"][0];
+    forestButton.onclick = location["button functions"][1];
+    fightButton.onclick = location["button functions"][2];
+
+    interactiveText.innerText = location.text;
 }
 
 function goSeers(){
-    shopButton.innerText = "Visit Supplies Shop";
-    forestButton.innerText = "Go To Forest";
-    fightButton.innerText = "Fight Enemy";
-
-    
-    shopButton.onclick = visitShop;
-    forestButton.onclick = goToForest;
-    fightButton.onclick = fightEnemy;
-
-    interactiveText.innerText = "You visit the seers in their secret chambers. After you recover from the draining effects of journeying into the Seers Lair, Orkoiyot The Great approaches you...He exclaims! 'What You Seek You Will Not Find Here. The Threat Is Still Imminent, Go Find It Before It Finds Us. You Can Find Supplies In The Shop, Trouble & Peace In The Forest! You Alone Know The Path You Must Choose, Ultimate Nandi Warrior!'";
+    update(locations[0]);
 }
 
 function visitShop(){
-    shopButton.innerText = "Trade 10 Gold For 10 Health";
-    forestButton.innerText = "Trade 30 Gold For A Weapon";
-    fightButton.innerText = "Go See The Seers";
-
-    
-    shopButton.onclick = buyHealth;
-    forestButton.onclick = buyWeapon;
-    fightButton.onclick = goSeers;
-
-    interactiveText.innerText = "You walk into the shop...What do you do next ?";
+    update(locations[1]);
 }
 
 function goToForest(){

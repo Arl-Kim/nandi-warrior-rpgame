@@ -74,11 +74,16 @@ function fightEnemy(){
 }
 
 function buyHealth(){
-    gold = gold - 10;
-    health = health + 10;
+    if(gold >= 10){
+        gold = gold - 10;
+        health = health + 10;
 
-    goldText.innerText = gold;
-    healthText.innerText = health;
+        goldText.innerText = gold;
+        healthText.innerText = health;
+    }
+    else{
+        interactiveText.innerText = "Supplies Master: I can't sell you this precious gift of health if you have no gold! Go find some gold to trade Mr. Ultimate Warrior.";
+    }
 }
 
 function buyWeapon(){

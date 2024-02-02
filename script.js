@@ -30,6 +30,12 @@ const locations = [{
     "button text": ["Trade 10 Gold For 10 Health", "Trade 30 Gold For A Weapon", "Go See The Seers"],
     "button functions": [buyHealth, buyWeapon, goSeers],
     text: "You walk into the shop...What do you do next ?"
+},
+{
+    name: "Forest",
+    "button text": ["Fight Livestock Rustler", "Fight Colonial Beast", "Go See The Seers"],
+    "button functions": [fightRustler, fightColonialBeast, goSeers],
+    text: "You decide to seek guidance in nature. You walk into the forest...After walking for some time you notice some tracks leading to a cluster of trees. You find a Rustler and a White Colonial Beast plotting. What do you do ?"
 }
 ];
 
@@ -60,7 +66,7 @@ function visitShop(){
 }
 
 function goToForest(){
-    console.log("You have decided to seek guidance in nature. You walk into the forest...");
+    update(locations[2]);
 }
 
 function fightEnemy(){
@@ -72,5 +78,13 @@ function buyHealth(){
 }
 
 function buyWeapon(){
+
+}
+
+function fightRustler(){
+
+}
+
+function fightColonialBeast(){
 
 }

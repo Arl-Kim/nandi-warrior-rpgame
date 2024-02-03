@@ -19,6 +19,13 @@ const enemyStats = document.querySelector("#enemyStats");
 const enemyName = document.querySelector("#enemyName");
 const enemyHealthText = document.querySelector("#enemyHealth");
 
+const weapons = [
+    {name: "kuriot(polished staff)", power: 5},
+    {name: "kibos(dagger)", power: 30},
+    {name: "chililen(spear)", power: 50},
+    {name: "mecheita(sword)", power: 100}
+];
+
 const locations = [{
     name: "Seers Lair",
     "button text": ["Visit Supplies Shop", "Go To Forest", "Fight Enemy"],

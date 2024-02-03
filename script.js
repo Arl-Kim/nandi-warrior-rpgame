@@ -94,7 +94,25 @@ function buyHealth(){
 }
 
 function buyWeapon(){
+    if(currentWeapon < weapons.length - 1){
+        if(gold >= 30){
+            gold = gold - 30;
+            currentWeapon++
 
+            goldText.innerText = gold;
+            let newWeapon = weapons[currentWeapon].name;
+
+            interactiveText.innerText = "You are now armed with " + newWeapon + ".";
+            inventory.push(newWeapon);
+            interactiveText = interactiveText + " In you inventory you currently have the following: " + inventory;
+        }
+        else{
+            interactiveText.innerText = "Supplies Master: I can't sell you any weapon if you don't have enough gold! Go find some gold to trade Mr. Ultimate Warrior."
+        }
+    }
+    else{
+        interactiveText.innerText = "You already have a " + weapons[weapons.length - 1].name + ". This is the Ultimate Weapon for The Ultimate Warrior. Go destroy our enemies!";
+    }
 }
 
 function fightRustler(){

@@ -29,7 +29,7 @@ const weapons = [
 const locations = [{
     name: "Seers Lair",
     "button text": ["Visit Supplies Shop", "Go To Forest", "Fight Enemy"],
-    "button functions": [visitShop, goToForest, fightEnemy],
+    "button functions": [visitShop, goToForest, fightUltimateEnemy],
     text: "You visit the seers in their secret chambers. After you recover from the draining effects of journeying into the Seers Lair, Orkoiyot The Great approaches you...He exclaims! 'What You Seek You Will Not Find Here. The Threat Is Still Imminent, Go Find It Before It Finds Us. You Can Find Supplies In The Shop, Trouble & Peace In The Forest! You Alone Know The Path You Must Choose, Ultimate Nandi Warrior!'"
 },
 {
@@ -49,7 +49,7 @@ const locations = [{
 //Initialize Buttons
 shopButton.onclick = visitShop;
 forestButton.onclick = goToForest;
-fightButton.onclick = fightEnemy;
+fightButton.onclick = fightUltimateEnemy;
 
 function update(location){
     shopButton.innerText = location["button text"][0];
@@ -74,10 +74,6 @@ function visitShop(){
 
 function goToForest(){
     update(locations[2]);
-}
-
-function fightEnemy(){
-    console.log("The time is now! destroy your enemy!")
 }
 
 function buyHealth(){
@@ -137,4 +133,8 @@ function fightRustler(){
 
 function fightColonialBeast(){
 
+}
+
+function fightUltimateEnemy(){
+    console.log("The time is now! destroy your enemy!")
 }

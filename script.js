@@ -104,7 +104,7 @@ function buyWeapon(){
 
             interactiveText.innerText = "You are now armed with " + newWeapon + ".";
             inventory.push(newWeapon);
-            interactiveText = interactiveText + " In you inventory you currently have the following: " + inventory;
+            interactiveText.innerText = interactiveText.innerText + " In you inventory you currently have the following: " + inventory;
         }
         else{
             interactiveText.innerText = "Supplies Master: I can't sell you any weapon if you don't have enough gold! Go find some gold to trade Mr. Ultimate Warrior."
@@ -112,6 +112,22 @@ function buyWeapon(){
     }
     else{
         interactiveText.innerText = "You already have a " + weapons[weapons.length - 1].name + ". This is the Ultimate Weapon for The Ultimate Warrior. Go destroy our enemies!";
+        forestButton.innerText = "Trade Your Weapon For 15 Gold";
+        forestButton.onclick = tradeWeapon;
+    }
+}
+
+function tradeWeapon(){
+    if(weapons.length > 1){
+        gold = gold - 15;
+        goldText.innerText = gold;
+
+        let currentWeapon = weapons.shift() //Removes element at index 0 from weapons and initializes new var
+        interactiveText.innerText = "You have traded your " + currentWeapon + " for 15 gold."
+        interactiveText.innerText = interactiveText.innerText + " In you inventory you currently have the following: " + inventory;
+    }
+    else{
+        interactiveText.innerText = "Supplies Master: This is the only weapon you have ? No! I can't accept it. You need it to defend all of us...";
     }
 }
 

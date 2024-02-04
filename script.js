@@ -26,6 +26,12 @@ const weapons = [
     {name: "mecheita(sword)", power: 100}
 ];
 
+const enemies = [
+    {name: "Rustler", level: 2, health: 15},
+    {name: "Colonial Beast", level: 8, health: 60},
+    {name: "Neo-Colonial Beast", level: 20, health: 300}
+];
+
 const locations = [{
     name: "Seers Lair",
     "button text": ["Visit Supplies Shop", "Go To Forest", "Fight Enemy"],
@@ -137,4 +143,8 @@ function fightColonialBeast(){
 
 function fightUltimateEnemy(){
     console.log("The time is now! destroy your enemy!")
+}
+
+function startFight(){
+    
 }

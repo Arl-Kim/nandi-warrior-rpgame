@@ -49,6 +49,12 @@ const locations = [{
     "button text": ["Fight Livestock Rustler", "Fight Colonial Beast", "Go See The Seers"],
     "button functions": [fightRustler, fightColonialBeast, goSeers],
     text: "You decide to seek guidance in nature. You walk into the forest...After walking for some time you notice some tracks leading to a cluster of trees. You find a Rustler and a White Colonial Beast plotting. What do you do ?"
+},
+{
+    name: "Fighting Arena",
+    "button text": ["Attack", "Dodge Enemy Attack", "Turn Your Back, Run!"],
+    "button functions": [attackEnemy, dodgeAttack, goSeers],
+    text: "The time is now! Destroy your enemy!"
 }
 ];
 
@@ -134,17 +140,32 @@ function tradeWeapon(){
 }
 
 function fightRustler(){
-
+    fighting = 0;
+    startFight();
 }
 
 function fightColonialBeast(){
-
+    fighting = 1;
+    startFight();
 }
 
 function fightUltimateEnemy(){
-    console.log("The time is now! destroy your enemy!")
+    fighting = 2;
+    startFight();
 }
 
 function startFight(){
-    
+    update(locations[3]);
+    enemyHealth = enemies[fighting].health;
+    enemyStats.style.display = "block";
+    enemyName.innerText = enemies[fighting].name;
+    enemyHealthText.innerText = enemyHealth;
+}
+
+function attackEnemy(){
+
+}
+
+function dodgeAttack(){
+
 }

@@ -114,11 +114,11 @@ function buyWeapon(){
 }
 
 function tradeWeapon(){
-    if(weapons.length > 1){
-        gold = gold - 15;
+    if(inventory.length > 1){
+        gold = gold + 15;
         goldText.innerText = gold;
 
-        let currentWeapon = weapons.shift() //Removes element at index 0 from weapons and initializes new var
+        let currentWeapon = inventory.shift() //Removes element at index 0 in inventory and initializes new var
         interactiveText.innerText = "You have traded your " + currentWeapon + " for 15 gold."
         interactiveText.innerText = interactiveText.innerText + " In you inventory you currently have the following: " + inventory;
     }

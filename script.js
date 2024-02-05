@@ -163,7 +163,19 @@ function startFight(){
 }
 
 function attackEnemy(){
+    interactiveText.innerText = "The vile " + enemies[fighting].name + " makes a move towards you and attacks.";
+    interactiveText.innerText = interactiveText.innerText + " You counter the attack with your " + weapons[currentWeapon].name + ".";
+    health = health - enemies[fighting].level;
+    enemyHealth = enemyHealth - weapons[currentWeapon].power;
+    healthText.innerText = health;
+    enemyHealthText.innerText = enemyHealth;
 
+    if(health <= 0){
+        loseFight();
+    }
+    else if(enemyHealth <= 0){
+        destroyEnemy();
+    }
 }
 
 function dodgeAttack(){

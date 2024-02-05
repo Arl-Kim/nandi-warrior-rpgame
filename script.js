@@ -166,7 +166,7 @@ function attackEnemy(){
     interactiveText.innerText = "The vile " + enemies[fighting].name + " makes a move towards you and attacks.";
     interactiveText.innerText = interactiveText.innerText + " You counter the attack with your " + weapons[currentWeapon].name + ".";
     health = health - enemies[fighting].level;
-    enemyHealth = enemyHealth - weapons[currentWeapon].power;
+    enemyHealth = enemyHealth - (weapons[currentWeapon].power + Math.floor(Math.random() * experience) + 1);
     healthText.innerText = health;
     enemyHealthText.innerText = enemyHealth;
 

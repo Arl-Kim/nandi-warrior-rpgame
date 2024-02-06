@@ -61,6 +61,12 @@ const locations = [{
     "button text": ["Link Up With The Seers", "Link Up With The Seers", "Link Up With The Seers"],
     "button functions": [goSeers, goSeers, goSeers],
     text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours! Your experience as a warrior has increased."
+},
+{
+    name: "Lose Fight",
+    "button text": ["Try Again ?", "Try Again ?", "Try Again ?"],
+    "button functions": [restartGame, restartGame, restartGame],
+    text: "You die. ☠️"
 }
 ];
 
@@ -199,5 +205,5 @@ function destroyEnemy(){
 }
 
 function loseFight(){
-
+    update(locations[5]);
 }

@@ -55,6 +55,12 @@ const locations = [{
     "button text": ["Attack", "Dodge Enemy Attack", "Turn Your Back, Run!"],
     "button functions": [attackEnemy, dodgeAttack, goSeers],
     text: "The time is now! Destroy your enemy!"
+},
+{
+    name: "Enemy Defeated",
+    "button text": ["Link Up With The Seers", "Link Up With The Seers", "Link Up With The Seers"],
+    "button functions": [goSeers, goSeers, goSeers],
+    text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours! Your experience as a warrior has increased."
 }
 ];
 
@@ -184,7 +190,11 @@ function dodgeAttack(){
 }
 
 function destroyEnemy(){
-    
+    gold = gold + Math.floor(enemies[fighting].level * 6.7);
+    experience = experience + enemies[fighting].level;
+    goldText.innerText = gold;
+    experienceText.innerText = experience;
+    update(locations[4]);
 }
 
 function loseFight(){

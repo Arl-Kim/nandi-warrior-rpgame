@@ -207,3 +207,17 @@ function destroyEnemy(){
 function loseFight(){
     update(locations[5]);
 }
+
+function restartGame(){
+    experience = 0;
+    health = 100;
+    gold = 50;
+    currentWeapon = 0;
+    inventory = ["kuriot(stick)"];
+
+    experienceText.innerText = experience;
+    healthText.innerText = health;
+    goldText.innerText = gold;
+
+    goSeers();
+}

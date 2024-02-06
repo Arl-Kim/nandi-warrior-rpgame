@@ -179,5 +179,14 @@ function attackEnemy(){
 }
 
 function dodgeAttack(){
+    interactiveText.innerText = "Your dodging skills are top level, the vile  " + enemies[fighting].name + " misses!";
+
+}
+
+function destroyEnemy(){
+    
+}
+
+function loseFight(){
 
 }

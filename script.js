@@ -70,6 +70,7 @@ forestButton.onclick = goToForest;
 fightButton.onclick = fightUltimateEnemy;
 
 function update(location){
+    enemyStats.style.display = "none";
     shopButton.innerText = location["button text"][0];
     forestButton.innerText = location["button text"][1];
     fightButton.innerText = location["button text"][2];

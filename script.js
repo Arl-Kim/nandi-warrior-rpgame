@@ -32,42 +32,49 @@ const enemies = [
     {name: "Neo-Colonial Beast", level: 20, health: 300}
 ];
 
-const locations = [{
-    name: "Seers Lair",
-    "button text": ["Visit Supplies Shop", "Go To Forest", "Fight Enemy"],
-    "button functions": [visitShop, goToForest, fightUltimateEnemy],
-    text: "You visit the seers in their secret chambers. After you recover from the draining effects of journeying into the Seers Lair, Orkoiyot The Great approaches you...He exclaims! 'What You Seek You Will Not Find Here. The Threat Is Still Imminent, Go Find It Before It Finds Us. You Can Find Supplies In The Shop, Trouble & Peace In The Forest! You Alone Know The Path You Must Choose, Ultimate Nandi Warrior!'"
-},
-{
-    name: "Supplies Shop",
-    "button text": ["Trade 10 Gold For 10 Health", "Trade 30 Gold For A Weapon", "Go See The Seers"],
-    "button functions": [buyHealth, buyWeapon, goSeers],
-    text: "You walk into the shop...What do you do next ?"
-},
-{
-    name: "Forest",
-    "button text": ["Fight Livestock Rustler", "Fight Colonial Beast", "Go See The Seers"],
-    "button functions": [fightRustler, fightColonialBeast, goSeers],
-    text: "You decide to seek guidance in nature. You walk into the forest...After walking for some time you notice some tracks leading to a cluster of trees. You find a Rustler and a White Colonial Beast plotting. What do you do ?"
-},
-{
-    name: "Fighting Arena",
-    "button text": ["Attack", "Dodge Enemy Attack", "Turn Your Back, Run!"],
-    "button functions": [attackEnemy, dodgeAttack, goSeers],
-    text: "The time is now! Destroy your enemy!"
-},
-{
-    name: "Enemy Defeated",
-    "button text": ["Link Up With The Seers", "Link Up With The Seers", "Link Up With The Seers"],
-    "button functions": [goSeers, goSeers, goSeers],
-    text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours! Your experience as a warrior has increased."
-},
-{
-    name: "Lose Fight",
-    "button text": ["Try Again ?", "Try Again ?", "Try Again ?"],
-    "button functions": [restartGame, restartGame, restartGame],
-    text: "You die. ☠️"
-}
+const locations = [
+    {
+        name: "Seers Lair",
+        "button text": ["Visit Supplies Shop", "Go To Forest", "Fight Enemy"],
+        "button functions": [visitShop, goToForest, fightUltimateEnemy],
+        text: "You visit the seers in their secret chambers. After you recover from the draining effects of journeying into the Seers Lair, Orkoiyot The Great approaches you...He exclaims! 'What You Seek You Will Not Find Here. The Threat Is Still Imminent, Go Find It Before It Finds Us. You Can Find Supplies In The Shop, Trouble & Peace In The Forest! You Alone Know The Path You Must Choose, Ultimate Nandi Warrior!'"
+    },
+    {
+        name: "Supplies Shop",
+        "button text": ["Trade 10 Gold For 10 Health", "Trade 30 Gold For A Weapon", "Go See The Seers"],
+        "button functions": [buyHealth, buyWeapon, goSeers],
+        text: "You walk into the shop...What do you do next ?"
+    },
+    {
+        name: "Forest",
+        "button text": ["Fight Livestock Rustler", "Fight Colonial Beast", "Go See The Seers"],
+        "button functions": [fightRustler, fightColonialBeast, goSeers],
+        text: "You decide to seek guidance in nature. You walk into the forest...After walking for some time you notice some tracks leading to a cluster of trees. You find a Rustler and a White Colonial Beast plotting. What do you do ?"
+    },
+    {
+        name: "Fighting Arena",
+        "button text": ["Attack", "Dodge Enemy Attack", "Turn Your Back, Run!"],
+        "button functions": [attackEnemy, dodgeAttack, goSeers],
+        text: "The time is now! Destroy your enemy!"
+    },
+    {
+        name: "Enemy Defeated",
+        "button text": ["Link Up With The Seers", "Link Up With The Seers", "Link Up With The Seers"],
+        "button functions": [goSeers, goSeers, goSeers],
+        text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours! Your experience as a warrior has increased."
+    },
+    {
+        name: "Lose Fight",
+        "button text": ["Try Again ?", "Try Again ?", "Try Again ?"],
+        "button functions": [restartGame, restartGame, restartGame],
+        text: "You die. &#x2620"
+    },
+    {
+        name: "Win The Struggle",
+        "button text": ["Play Again ?", "Play Again ?", "Play Again"],
+        "button functions": [restartGame, restartGame, restartGame],
+        text: "Orkoiyot: You have destroyed The Ultimate Enemy!, Neo-Colonialism. I have watched a thousand times and more, this vile  beast wrapping chains around our children, an enslaver of our people in the future, so evil... Through your sacrifice and valor, you have freed the future Nandindets and Alkebulanis of Alkebulan As One! The Greatest Land On The Earth! &#x1F389"
+    }
 ];
 
 //Initialize Buttons
@@ -211,6 +218,10 @@ function destroyEnemy(){
 
 function loseFight(){
     update(locations[5]);
+}
+
+function winGame(){
+    update(locations[6]);
 }
 
 function restartGame(){

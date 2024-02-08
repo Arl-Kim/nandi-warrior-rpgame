@@ -86,7 +86,7 @@ function update(location){
     forestButton.onclick = location["button functions"][1];
     fightButton.onclick = location["button functions"][2];
 
-    interactiveText.innerText = location.text;
+    interactiveText.innerHTML = location.text;
 }
 
 function goSeers(){

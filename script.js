@@ -187,7 +187,12 @@ function attackEnemy(){
         loseFight();
     }
     else if(enemyHealth <= 0){
-        destroyEnemy();
+        if(fighting === 2){
+            winGame();
+        }
+        else{
+            destroyEnemy();
+        }
     }
 }
 

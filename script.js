@@ -15,6 +15,7 @@ const interactiveText = document.querySelector("#text");
 const experienceText = document.querySelector("#xpText");
 const healthText = document.querySelector("#healthText");
 const goldText = document.querySelector("#goldText");
+const controls = document.querySelector("#controls");
 const enemyStats = document.querySelector("#enemyStats");
 const enemyName = document.querySelector("#enemyName");
 const enemyHealthText = document.querySelector("#enemyHealth");
@@ -97,6 +98,8 @@ function update(location){
 }
 
 function goSeers(){
+    controls.style.borderBottomLeftRadius = "10px";
+    controls.style.borderBottomRightRadius = "10px";
     update(locations[0]);
 }
 
@@ -177,6 +180,8 @@ function fightUltimateEnemy(){
 function startFight(){
     update(locations[3]);
     enemyHealth = enemies[fighting].health;
+    controls.style.borderBottomLeftRadius = "0px";
+    controls.style.borderBottomRightRadius = "0px";
     enemyStats.style.display = "block";
     enemyName.innerText = enemies[fighting].name;
     enemyHealthText.innerText = enemyHealth;

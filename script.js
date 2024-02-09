@@ -71,9 +71,9 @@ const locations = [
     },
     {
         name: "Win The Struggle",
-        "button text": ["Play Again ?", "Play Again ?", "Play Again"],
+        "button text": ["Play Again ?", "Play Again ?", "Play Again ?"],
         "button functions": [restartGame, restartGame, restartGame],
-        text: "Orkoiyot: You have destroyed The Ultimate Enemy!, Neo-Colonialism. I have watched a thousand times and more, this vile  beast wrapping chains around our children, an enslaver of our people in the future, so evil... Through your sacrifice and valor, you have freed the future Nandindets and Alkebulanis of Alkebulan As One! The Greatest Land On The Earth! &#x1F389"
+        text: "Orkoiyot The Great: You have destroyed Our Ultimate Enemy!, Neo-Colonialism. I have watched a thousand times and more, this vile  beast wrapping chains around our children, an enslaver of our people in the future, so evil... Through your sacrifice and valor, you have freed all Nandindets and All Alkebulanis of Alkebulan As One! The Greatest Land On The Earth! &#x1F389"
     }
 ];
 

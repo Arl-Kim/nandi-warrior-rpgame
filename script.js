@@ -191,7 +191,14 @@ function attackEnemy(){
     interactiveText.innerText = "The vile " + enemies[fighting].name + " makes a move towards you and attacks.";
     interactiveText.innerText = interactiveText.innerText + " You counter the attack with your " + weapons[currentWeapon].name + ".";
     health = health - getEnemyAttackValue(enemies[fighting].level);
-    enemyHealth = enemyHealth - (weapons[currentWeapon].power + Math.floor(Math.random() * experience) + 1);
+
+    if(isEnemyHit()){
+        enemyHealth = enemyHealth - (weapons[currentWeapon].power + Math.floor(Math.random() * experience) + 1);
+    }
+    else{
+        interactiveText.innerHTML = interactiveText.innerText + " &#129327 You missed!"
+    }
+
     healthText.innerText = health;
     enemyHealthText.innerText = enemyHealth;
 
@@ -214,6 +221,10 @@ function getEnemyAttackValue(level){
     console.log(enemyHit) //for debugging only
 
     return enemyHit > 0 ? enemyHit: 0; // Returns value only if value > 0, else returns 0.
+}
+
+function isEnemyHit(){
+    return Math.random() > 0.2 || health < 20;
 }
 
 function dodgeAttack(){

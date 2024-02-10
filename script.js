@@ -222,6 +222,8 @@ function dodgeAttack(){
 }
 
 function destroyEnemy(){
+    controls.style.borderBottomLeftRadius = "10px";
+    controls.style.borderBottomRightRadius = "10px";
     gold = gold + Math.floor(enemies[fighting].level * 6.7);
     experience = experience + enemies[fighting].level;
     goldText.innerText = gold;
@@ -230,10 +232,14 @@ function destroyEnemy(){
 }
 
 function loseFight(){
+    controls.style.borderBottomLeftRadius = "10px";
+    controls.style.borderBottomRightRadius = "10px";
     update(locations[5]);
 }
 
 function winGame(){
+    controls.style.borderBottomLeftRadius = "10px";
+    controls.style.borderBottomRightRadius = "10px";
     update(locations[6]);
 }
 

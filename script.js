@@ -213,7 +213,7 @@ function getEnemyAttackValue(level){
 
     console.log(enemyHit) //for debugging only
 
-    return enemyHit;
+    return enemyHit > 0 ? enemyHit: 0; // Returns value only if value > 0, else returns 0.
 }
 
 function dodgeAttack(){

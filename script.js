@@ -213,6 +213,11 @@ function attackEnemy(){
             destroyEnemy();
         }
     }
+
+    if(Math.random() <= 0.1){
+        interactiveText.innerHTML = interactiveText.innerText + " Your " + inventory.pop() + " breaks!&#128551";
+        currentWeapon--;
+    }
 }
 
 function getEnemyAttackValue(level){

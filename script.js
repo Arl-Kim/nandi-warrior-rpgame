@@ -284,7 +284,29 @@ function hiddenAncientCave(){
 }
 
 function pickNumber(guess){
-    
+    const numbers = [];
+    while(numbers.length < 10){
+        numbers.push(Math.floor(Math.random() * 11)); // Add a random number from 0 - 10 to numbers array
+    }
+
+    interactiveText.innerText = "Force Of Nature: So You Think " + guess + " Holds The Key ? Hmm.. Let's See:\n";
+
+    for(let i = 0; i < 10; i++){
+        interactiveText.innerText = interactiveText.innerText + numbers[i] + "\n";
+    }
+
+    if(numbers.includes(guess)){
+        interactiveText.innerText = interactiveText.innerText + "You May Enter, Ultimate Warrior, Your Number Holds The Key! Health & Wealth To You...";
+        gold = gold + 30;
+        health = health + 40;
+        goldText.innerText = gold;
+        healthText.innerText = health;
+    }
+    else{
+        interactiveText.innerText = interactiveText.innerText + "You Must Leave Immediately! Your Number Does Not Hold The Key! Leave Warrior You No Longer Have My Protection, The Rejectors Are Sucking Your Soul, Your Health Is At Risk! ";
+        health = health - 20;
+        healthText.innerText = health;
+    }
 }
 
 function pickTwo(){

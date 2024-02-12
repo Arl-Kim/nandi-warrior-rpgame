@@ -61,7 +61,7 @@ const locations = [
     {
         name: "Enemy Defeated",
         "button text": ["Link Up With The Seers", "Link Up With The Seers", "Link Up With The Seers"],
-        "button functions": [goSeers, goSeers, goSeers],
+        "button functions": [hiddenAncientCave, goSeers, goSeers],
         text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours! Your experience as a warrior has increased."
     },
     {
@@ -80,7 +80,7 @@ const locations = [
         name: "Game Within Game",
         "button text": ["Number 2", "Number 8", "Focus On The Main Mission ?"],
         "button functions": [pickTwo, pickEight, goSeers],
-        text: "While in the forest, you discover a cave marked with Nandi depictions from Ancient Kemet, there is power inside. You decide to walk in, but a strong force of nature stops you at the entrance. You hear a powerful voice inside your head... Force Of Nature: You must choose the correct number above to enter! Only one number holds the key"
+        text: "Your journey to the Seers Lair is interrupted by an Unknown Force, Your are flung through time and end up outside a cave marked with Nandi depictions from Ancient Kemet, who knows when it is? What day, what month, what year ? Which decade, which century?!, There is power inside the cave. You decide to walk in, but a Powerful Force stops you at the entrance. You hear a powerful voice inside your head... Force Of Nature: You must choose the correct number above to enter! Only one number holds the key"
     }
 ];
 
@@ -289,21 +289,21 @@ function pickNumber(guess){
         numbers.push(Math.floor(Math.random() * 11)); // Add a random number from 0 - 10 to numbers array
     }
 
-    interactiveText.innerText = "Force Of Nature: So You Think " + guess + " Holds The Key ? Hmm.. Let's See:\n";
+    interactiveText.innerText = "Force Of Nature: So You Think " + guess + " Is The Key ? Hmm.. Let's See:\n";
 
     for(let i = 0; i < 10; i++){
         interactiveText.innerText = interactiveText.innerText + numbers[i] + "\n";
     }
 
     if(numbers.includes(guess)){
-        interactiveText.innerText = interactiveText.innerText + "You May Enter, Ultimate Warrior, Your Number Holds The Key! Health & Wealth To You...";
+        interactiveText.innerText = interactiveText.innerText + "You May Enter, Ultimate Warrior, Your Number Is In The Key! Health & Wealth To You...";
         gold = gold + 30;
         health = health + 40;
         goldText.innerText = gold;
         healthText.innerText = health;
     }
     else{
-        interactiveText.innerText = interactiveText.innerText + "You Must Leave Immediately! Your Number Does Not Hold The Key! Leave Warrior You No Longer Have My Protection, The Rejectors Are Sucking Your Soul, Your Health Is At Risk! ";
+        interactiveText.innerText = interactiveText.innerText + "You Must Leave Immediately Warrior! Your Number Is Not In The Key! You No Longer Have My Protection, The Rejectors Are Sucking Your Soul, Your Health Is At Risk!";
         health = health - 20;
         healthText.innerText = health;
 

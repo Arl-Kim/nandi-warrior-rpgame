@@ -320,3 +320,6 @@ function pickTwo(){
 function pickEight(){
     pickNumber(8);
 }
+
+
+//Initial Release(Version 1.0.0)

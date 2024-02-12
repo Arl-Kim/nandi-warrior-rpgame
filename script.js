@@ -214,7 +214,7 @@ function attackEnemy(){
         }
     }
 
-    if(Math.random() <= 0.1){
+    if(Math.random() <= 0.1 && inventory.length !== 1){
         interactiveText.innerHTML = interactiveText.innerText + " Your " + inventory.pop() + " breaks!&#128551";
         currentWeapon--;
     }

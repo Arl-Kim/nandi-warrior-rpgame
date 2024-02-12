@@ -75,6 +75,12 @@ const locations = [
         "button text": ["Play Again ?", "Play Again ?", "Play Again ?"],
         "button functions": [restartGame, restartGame, restartGame],
         text: "Orkoiyot The Great: You have destroyed Our Ultimate Enemy!, Neo-Colonialism. I have watched a thousand times and more, this vile  beast wrapping chains around our children, an enslaver of our people in the future, so evil... Through your sacrifice and valor, you have freed all Nandindets and All Alkebulanis of Alkebulan As One! The Greatest Land On The Earth! &#x1F389"
+    },
+    {
+        name: "Game Within Game",
+        "button text": ["Number 2", "Number 8", "Focus On The Main Mission ?"],
+        "button functions": [pickTwo, pickEight, goSeers],
+        text: "While in the forest, you discover a cave marked with Nandi depictions from Ancient Kemet, there is power inside. You decide to walk in, but a strong force of nature stops you at the entrance. You hear a powerful voice inside your head... Force Of Nature: You must choose the correct number above to enter! Only one number holds the key"
     }
 ];
 
@@ -271,4 +277,20 @@ function restartGame(){
     goldText.innerText = gold;
 
     goSeers();
+}
+
+function hiddenAncientCave(){
+    update(locations[7]);
+}
+
+function pickNumber(guess){
+    
+}
+
+function pickTwo(){
+    pickNumber(2);
+}
+
+function pickEight(){
+    pickNumber(8);
 }

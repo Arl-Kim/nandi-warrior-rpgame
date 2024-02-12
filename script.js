@@ -306,6 +306,10 @@ function pickNumber(guess){
         interactiveText.innerText = interactiveText.innerText + "You Must Leave Immediately! Your Number Does Not Hold The Key! Leave Warrior You No Longer Have My Protection, The Rejectors Are Sucking Your Soul, Your Health Is At Risk! ";
         health = health - 20;
         healthText.innerText = health;
+
+        if(health <= 0){
+            loseFight();
+        }
     }
 }
 

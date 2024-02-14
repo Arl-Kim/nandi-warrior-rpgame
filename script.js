@@ -38,37 +38,37 @@ const locations = [
         name: "Seers Lair",
         "button text": ["Visit Supplies Shop", "Go To Forest", "Fight Enemy"],
         "button functions": [visitShop, goToForest, fightUltimateEnemy],
-        text: "You visit the seers in their secret chambers. After you recover from the draining effects of journeying into the Seers Lair, Orkoiyot The Great approaches you...He exclaims! 'What You Seek You Will Not Find Here. The Threat Is Still Imminent, Go Find It Before It Finds Us. You Can Find Supplies In The Shop, Trouble & Peace In The Forest! You Alone Know The Path You Must Choose, Ultimate Nandi Warrior!'"
+        text: "You visit the seers in their secret chambers. After you recover from the draining effects of journeying into the Seers Lair, Orkoiyot The Great approaches you..." + "<span class='intext-emo'>&#128116;&#127998</span>" + "What You Seek You Will Not Find Here. The Threat Is Still Imminent, Go Find It Before It Finds Us. You Can Find Supplies In The Shop, Trouble & Peace In The Forest! You Alone Know The Path You Must Choose, Ultimate Nandi Warrior!"
     },
     {
         name: "Supplies Shop",
         "button text": ["Trade 10 Gold For 10 Health", "Trade 30 Gold For A Weapon", "Go See The Seers"],
         "button functions": [buyHealth, buyWeapon, goSeers],
-        text: "You walk into the shop...What do you do next ?"
+        text: "You walk into the shop...What do you do next ?" + "<span class='intext-emo'>&#129335;&#127998;&#8205;&#9794;&#65039</span>"
     },
     {
         name: "Forest",
         "button text": ["Fight Livestock Rustler", "Fight Colonial Beast", "Go See The Seers"],
         "button functions": [fightRustler, fightColonialBeast, goSeers],
-        text: "You decide to seek guidance in nature. You walk into the forest...After walking for some time you notice some tracks leading to a cluster of trees. You find a Rustler and a White Colonial Beast plotting. What do you do ?"
+        text: "You decide to seek guidance in nature." + "<span class='intext-emo'>&#129496;&#127998;&#8205;&#9794;&#65039</span>" + "You walk into the forest...After walking for some time you notice some tracks leading to a cluster of trees." + "<span class='intext-emo'>&#128062 &#128099</span>" + "You take a peek and see a Rustler and a White Colonial Beast plotting. What do you do ?"
     },
     {
         name: "Fighting Arena",
         "button text": ["Attack", "Dodge Enemy Attack", "Turn Your Back, Run!"],
         "button functions": [attackEnemy, dodgeAttack, goSeers],
-        text: "The time is now! Destroy your enemy!"
+        text: "The time is now! Destroy your enemy!" + "<span class='intext-emo'>&#9876;&#65039</span>"
     },
     {
         name: "Enemy Defeated",
         "button text": ["Link Up With The Seers", "Link Up With The Seers", "Link Up With The Seers"],
         "button functions": [hiddenAncientCave, goSeers, goSeers],
-        text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours! Your experience as a warrior has increased."
+        text: "Your enemy screams in pain as they depart this physical plane. You find some stolen gold in their possession. It's all yours!" + "<span class='intext-emo'>&#128176</span>" + "Your experience as a warrior has increased." + "<span class='intext-emo'>&#127775</span>"
     },
     {
         name: "Lose Fight",
         "button text": ["Try Again ?", "Try Again ?", "Try Again ?"],
         "button functions": [restartGame, restartGame, restartGame],
-        text: "You die. &#x2620"
+        text: "You die." + "<span class='intext-emo'>&#x2620</span>"
     },
     {
         name: "Win The Struggle",
@@ -126,7 +126,7 @@ function buyHealth(){
         healthText.innerText = health;
     }
     else{
-        interactiveText.innerText = "Supplies Master: I can't sell you this precious gift of health if you have no gold! Go find some gold to trade Mr. Ultimate Warrior.";
+        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: I can't sell you this precious gift of health if you have no gold! Go find some gold to trade Mr. Ultimate Warrior.";
     }
 }
 
@@ -139,12 +139,12 @@ function buyWeapon(){
             goldText.innerText = gold;
             let newWeapon = weapons[currentWeapon].name;
 
-            interactiveText.innerText = "You are now armed with " + newWeapon + ".";
+            interactiveText.innerHTML = "You are now armed with " + newWeapon + "&#128481.";
             inventory.push(newWeapon);
             interactiveText.innerText = interactiveText.innerText + " In your inventory you currently have the following: " + inventory.join(", ");
         }
         else{
-            interactiveText.innerText = "Supplies Master: I can't sell you any weapon if you don't have enough gold! Go find some gold to trade Mr. Ultimate Warrior."
+            interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: I can't sell you any weapon if you don't have enough gold! Go find some gold to trade Mr. Ultimate Warrior."
         }
     }
     else{

@@ -124,6 +124,7 @@ function buyHealth(){
 
         goldText.innerText = gold;
         healthText.innerText = health;
+        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: For your gold, here are 10 units of health, Mr. Ultimate Warrior.";
     }
     else{
         interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: I can't sell you this precious gift of health if you have no gold! Go find some gold to trade Mr. Ultimate Warrior.";
@@ -139,9 +140,9 @@ function buyWeapon(){
             goldText.innerText = gold;
             let newWeapon = weapons[currentWeapon].name;
 
-            interactiveText.innerHTML = "You are now armed with " + newWeapon + "&#128481.";
+            interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: You are now armed with " + newWeapon + ".";
             inventory.push(newWeapon);
-            interactiveText.innerText = interactiveText.innerText + " In your inventory you currently have the following: " + inventory.join(", ");
+            interactiveText.innerHTML = interactiveText.innerHTML + " In your inventory you currently have the following: " + inventory.join(", ");
         }
         else{
             interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: I can't sell you any weapon if you don't have enough gold! Go find some gold to trade Mr. Ultimate Warrior."
@@ -202,7 +203,7 @@ function attackEnemy(){
         enemyHealth = enemyHealth - (weapons[currentWeapon].power + Math.floor(Math.random() * experience) + 1);
     }
     else{
-        interactiveText.innerHTML = interactiveText.innerText + " &#129327 You missed!"
+        interactiveText.innerHTML = interactiveText.innerText + " <span class='intext-emo'>&#128552</span> You missed!"
     }
 
     healthText.innerText = health;
@@ -221,7 +222,7 @@ function attackEnemy(){
     }
 
     if(Math.random() <= 0.1 && inventory.length !== 1){
-        interactiveText.innerHTML = interactiveText.innerText + " Your " + inventory.pop() + " breaks!&#128551";
+        interactiveText.innerHTML = interactiveText.innerHTML + " Your " + inventory.pop() + " breaks!<span class='intext-emo'>&#128552</span>";
         currentWeapon--;
     }
 }
@@ -239,7 +240,7 @@ function isEnemyHit(){
 }
 
 function dodgeAttack(){
-    interactiveText.innerText = "Your dodging skills are top level, the vile  " + enemies[fighting].name + " misses!";
+    interactiveText.innerHTML = "Your dodging skills are top level, the vile  " + enemies[fighting].name + " misses!" + "<span class='intext-emo'>&#128512<span/>";
 
 }
 

@@ -149,7 +149,7 @@ function buyWeapon(){
         }
     }
     else{
-        interactiveText.innerText = "You already have a " + weapons[weapons.length - 1].name + ". This is the Ultimate Weapon for The Ultimate Warrior. Go destroy our enemies!";
+        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "You already have a " + weapons[weapons.length - 1].name + ". This is the Ultimate Weapon for The Ultimate Warrior. Go destroy our enemies!";
         forestButton.innerText = "Trade Your Weapon For 15 Gold";
         forestButton.onclick = tradeWeapon;
     }
@@ -161,11 +161,11 @@ function tradeWeapon(){
         goldText.innerText = gold;
 
         let currentWeapon = inventory.shift() //Removes element at index 0 in inventory and initializes new var
-        interactiveText.innerText = "You have traded your " + currentWeapon + " for 15 gold."
-        interactiveText.innerText = interactiveText.innerText + " In you inventory you currently have the following: " + inventory.join(", ");
+        interactiveText.HTML = "You have traded your " + currentWeapon + " for 15 gold" + "<span class='intext-emo'>&#129689</span>";
+        interactiveText.innerHTML = interactiveText.innerHTML + " In you inventory you currently have the following: " + inventory.join(", ");
     }
     else{
-        interactiveText.innerText = "Supplies Master: This is the only weapon you have ? No! I can't accept it. You need it to defend all of us...";
+        interactiveText.innerText = "Supplies Master: This is the only weapon you have ? No! I can't accept it. You need it to defend all of us...";//Add Emoji
     }
 }
 
@@ -196,7 +196,7 @@ function startFight(){
 
 function attackEnemy(){
     interactiveText.innerText = "The vile " + enemies[fighting].name + " makes a move towards you and attacks.";
-    interactiveText.innerText = interactiveText.innerText + " You counter the attack with your " + weapons[currentWeapon].name + ".";
+    interactiveText.innerText = interactiveText.innerText + " You counter the attack with your " + weapons[currentWeapon].name + ".";//Add Emoji
     health = health - getEnemyAttackValue(enemies[fighting].level);
 
     if(isEnemyHit()){
@@ -222,7 +222,7 @@ function attackEnemy(){
     }
 
     if(Math.random() <= 0.1 && inventory.length !== 1){
-        interactiveText.innerHTML = interactiveText.innerHTML + " Your " + inventory.pop() + " breaks!<span class='intext-emo'>&#128552</span>";
+        interactiveText.innerHTML = interactiveText.innerHTML + " Your " + inventory.pop() + " breaks!<span class='intext-emo'>&#128552</span>"; //Change Emoji to dissapointed.
         currentWeapon--;
     }
 }

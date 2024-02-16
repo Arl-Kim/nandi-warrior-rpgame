@@ -165,7 +165,7 @@ function tradeWeapon(){
         interactiveText.innerHTML = interactiveText.innerHTML + " In you inventory you currently have the following: " + inventory.join(", ");
     }
     else{
-        interactiveText.innerText = "Supplies Master: This is the only weapon you have ? No! I can't accept it. You need it to defend all of us...";//Add Emoji
+        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "Supplies Master: This is the only weapon you have ?" + "<span class='intext-emo'>&#128581;&#127998</span>" + "No! I can't accept it. You need it to defend all of us...";
     }
 }
 
@@ -195,8 +195,8 @@ function startFight(){
 }
 
 function attackEnemy(){
-    interactiveText.innerText = "The vile " + enemies[fighting].name + " makes a move towards you and attacks.";
-    interactiveText.innerText = interactiveText.innerText + " You counter the attack with your " + weapons[currentWeapon].name + ".";//Add Emoji
+    interactiveText.innerHTML = "The vile " + enemies[fighting].name + " makes a move towards you and attacks." + "<span class='intext-emo'>&#128121<span/>";
+    interactiveText.innerHTML = interactiveText.innerHTML + " You counter the attack with your " + weapons[currentWeapon].name + "<span class='intext-emo'>&#129338<span/>.";
     health = health - getEnemyAttackValue(enemies[fighting].level);
 
     if(isEnemyHit()){
@@ -222,7 +222,7 @@ function attackEnemy(){
     }
 
     if(Math.random() <= 0.1 && inventory.length !== 1){
-        interactiveText.innerHTML = interactiveText.innerHTML + " Your " + inventory.pop() + " breaks!<span class='intext-emo'>&#128552</span>"; //Change Emoji to dissapointed.
+        interactiveText.innerHTML = interactiveText.innerHTML + " Your " + inventory.pop() + " breaks!<span class='intext-emo'>&#129318;&#127998;&#8205;&#9794;&#65039</span>";
         currentWeapon--;
     }
 }

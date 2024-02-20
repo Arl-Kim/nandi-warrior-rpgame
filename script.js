@@ -80,7 +80,7 @@ const locations = [
         name: "Game Within Game",
         "button text": ["Number 2", "Number 8", "Focus On The Main Mission ?"],
         "button functions": [pickTwo, pickEight, goSeers],
-        text: "Your journey to the Seers Lair is interrupted by an Unknown Force, Your are flung through time and end up outside a cave marked with Nandi depictions from Ancient Kemet, who knows when it is? What day, what month, what year ? Which decade, which century?!, There is power inside the cave. You decide to walk in, but a Powerful Force stops you at the entrance. You hear a powerful voice inside your head... Force Of Nature: You must choose the correct number above to enter! Only one number holds the key"
+        text: "Your journey to the Seers Lair is interrupted by an Unknown Force, You are flung through time and end up outside a cave marked with Nandi depictions from Ancient Kemet, who knows when it is? What day, what month, what year ? Which decade, which century?!, There is power inside the cave. You decide to walk in, but a Powerful Force stops you at the entrance. You hear a powerful voice inside your head... Force Of Nature: You must choose the correct number above to enter! Only one number holds the key"
     }
 ];
 
@@ -149,7 +149,7 @@ function buyWeapon(){
         }
     }
     else{
-        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "You already have a " + weapons[weapons.length - 1].name + ". This is the Ultimate Weapon for The Ultimate Warrior. Go destroy our enemies!";
+        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "You already have a " + weapons[weapons.length - 1].name + ". This is the Ultimate Weapon for The Ultimate Warrior. You can trade your weakest weapon for 15 gold. You want to keep your arsenal ? Go destroy our enemies then!";
         forestButton.innerText = "Trade Your Weapon For 15 Gold";
         forestButton.onclick = tradeWeapon;
     }
@@ -161,7 +161,7 @@ function tradeWeapon(){
         goldText.innerText = gold;
 
         let currentWeapon = inventory.shift() //Removes element at index 0 in inventory and initializes new var
-        interactiveText.HTML = "You have traded your " + currentWeapon + " for 15 gold" + "<span class='intext-emo'>&#129689</span>";
+        interactiveText.innerHTML = "<span class='intext-emo'>&#128114;&#127998</span>" + "You have traded your " + currentWeapon + " for 15 gold" + "<span class='intext-emo'>&#129689</span>";
         interactiveText.innerHTML = interactiveText.innerHTML + " In you inventory you currently have the following: " + inventory.join(", ");
     }
     else{
@@ -196,14 +196,14 @@ function startFight(){
 
 function attackEnemy(){
     interactiveText.innerHTML = "The vile " + enemies[fighting].name + " makes a move towards you and attacks." + "<span class='intext-emo'>&#128121<span/>";
-    interactiveText.innerHTML = interactiveText.innerHTML + " You counter the attack with your " + weapons[currentWeapon].name + "<span class='intext-emo'>&#129338<span/>.";
+    interactiveText.innerHTML = interactiveText.innerHTML + " You counter the attack with your " + weapons[currentWeapon].name + "<span class='intext-emo'>&#129338<span/>";
     health = health - getEnemyAttackValue(enemies[fighting].level);
 
     if(isEnemyHit()){
         enemyHealth = enemyHealth - (weapons[currentWeapon].power + Math.floor(Math.random() * experience) + 1);
     }
     else{
-        interactiveText.innerHTML = interactiveText.innerText + " <span class='intext-emo'>&#128552</span> You missed!"
+        interactiveText.innerHTML = interactiveText.innerHTML + " <span class='intext-emo'>&#128552</span> You missed!"
     }
 
     healthText.innerText = health;

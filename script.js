@@ -74,13 +74,13 @@ const locations = [
         name: "Win The Struggle",
         "button text": ["Play Again ?", "Play Again ?", "Play Again ?"],
         "button functions": [restartGame, restartGame, restartGame],
-        text: "Orkoiyot The Great: You have destroyed Our Ultimate Enemy!, Neo-Colonialism. I have watched a thousand times and more, this vile  beast wrapping chains around our children, an enslaver of our people in the future, so evil... Through your sacrifice and valor, you have freed all Nandindets and All Alkebulanis of Alkebulan As One! The Greatest Land On The Earth! &#x1F389"
+        text: "<span class='intext-emo'>&#128116;&#127998</span> Orkoiyot The Great: You have destroyed Our Ultimate Enemy!, Neo-Colonialism. I have watched a thousand times and more, this vile  beast wrapping chains around our children, an enslaver of our people in the future, so evil... Through your sacrifice and valor, you have freed All Nandindets and All Alkebulanis of Alkebulan, The Greatest Land On The Earth!!!" + "<br>" + "<div class='celebrate'><img src='fireworks.gif' class='celebrate'></div>"
     },
     {
         name: "Game Within Game",
         "button text": ["Number 2", "Number 8", "Focus On The Main Mission ?"],
         "button functions": [pickTwo, pickEight, goSeers],
-        text: "Your journey to the Seers Lair is interrupted by an Unknown Force, You are flung through time and end up outside a cave marked with Nandi depictions from Ancient Kemet, who knows when it is? What day, what month, what year ? Which decade, which century?!, There is power inside the cave. You decide to walk in, but a Powerful Force stops you at the entrance. You hear a powerful voice inside your head... Force Of Nature: You must choose the correct number above to enter! Only one number holds the key"
+        text: "Your journey to the Seers Lair is interrupted by an Unknown Force, You are flung through time and end up outside a cave marked with Nandi depictions from Ancient Kemet, who knows when it is? What day, what month, what year ? Which decade, which century?!<span class='intext-emo'>&#129335;&#127998;&#8205;&#9794;&#65039</span>, There is power inside the cave. You decide to walk in, but a Powerful Force stops you at the entrance. You hear a powerful voice inside your head... <span class='intext-emo'>&#127788;&#65039</span>Force Of Nature: You must choose the correct number above to enter! The number you choose must be in the final key"
     }
 ];
 
@@ -203,7 +203,7 @@ function attackEnemy(){
         enemyHealth = enemyHealth - (weapons[currentWeapon].power + Math.floor(Math.random() * experience) + 1);
     }
     else{
-        interactiveText.innerHTML = interactiveText.innerHTML + " <span class='intext-emo'>&#128552</span> You missed!"
+        interactiveText.innerHTML = interactiveText.innerHTML + "You missed! <span class='intext-emo'>&#128552</span>"
     }
 
     healthText.innerText = health;
@@ -290,21 +290,21 @@ function pickNumber(guess){
         numbers.push(Math.floor(Math.random() * 11)); // Add a random number from 0 - 10 to numbers array
     }
 
-    interactiveText.innerText = "Force Of Nature: So You Think " + guess + " Is The Key ? Hmm.. Let's See:\n";
+    interactiveText.innerText = "Force Of Nature: So You Think " + guess + " Will Be In The Key ? Hmm.. Let's See:\n";
 
     for(let i = 0; i < 10; i++){
         interactiveText.innerText = interactiveText.innerText + numbers[i] + "\n";
     }
 
     if(numbers.includes(guess)){
-        interactiveText.innerText = interactiveText.innerText + "You May Enter, Ultimate Warrior, Your Number Is In The Key! Health & Wealth To You...";
+        interactiveText.innerHTML = interactiveText.innerHTML + "<span class='intext-emo'>&#127788;&#65039</span>Force Of Nature: " + "Ultimate Warrior! Your Number Is In The Key! Health & Wealth To You...";
         gold = gold + 30;
         health = health + 40;
         goldText.innerText = gold;
         healthText.innerText = health;
     }
     else{
-        interactiveText.innerText = interactiveText.innerText + "You Must Leave Immediately Warrior! Your Number Is Not In The Key! You No Longer Have My Protection, The Rejectors Are Sucking Your Soul, Your Health Is At Risk!";
+        interactiveText.innerHTML = interactiveText.innerHTML + "<span class='intext-emo'>&#127788;&#65039</span>Force Of Nature: " + "You Must Leave Immediately Warrior! Your Number Is Not In The Key! You Can Try Again But You No Longer Have My Protection, The Rejectors Are Sucking Your Soul, Your Health Is At Risk!";
         health = health - 20;
         healthText.innerText = health;
 

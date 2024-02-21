@@ -76,7 +76,7 @@ body {
   }
 
   .inheader-emo{
-    font-size: 77px;
+    font-size: 84px;
   }
 
   #welc_text{
@@ -85,7 +85,19 @@ body {
   }
 
   .intext-emo{
-    font-size: 50px;
+    font-size: 77px;
+  }
+
+  .celebrate{
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .celebrate img{
+    width: 300px;
+    height: 300px;
+    margin: auto;
   }
 
 
